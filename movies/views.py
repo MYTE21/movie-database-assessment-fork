@@ -17,7 +17,6 @@ class ListCreateMovieAPIView(ListCreateAPIView):
     filterset_class = MovieFilter
     permission_classes = (IsAuthenticated,)
 
-
     def perform_create(self, serializer):
         # Assign the user who created the movie
         serializer.save(creator=self.request.user)
